@@ -129,12 +129,29 @@ Question 4: Todo List \n`);
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
+console.log("Step 1");
+let myTodoList = []
+console.log(myTodoList);
 
+console.log("Step 2");
+myTodoList.push("Make my bed.");
+myTodoList.push("Brush my teeth.");
+myTodoList.push("Take a shower.");
+console.log(myTodoList);
 
+console.log("Step 3");
+myTodoList.splice(1,1);
+console.log(myTodoList);
 
+console.log("Step 4");
+let yourTodoList = [];
+yourTodoList.push("Sail around the globe.");
+yourTodoList.push("Design a spaceport.");
+console.log(yourTodoList);
 
-
-
+console.log("Step 5");
+const ourTodoList = myTodoList.concat(yourTodoList);
+console.log(ourTodoList);
 
 // Question 5: isEven 
 console.log(`--------------------------
@@ -151,17 +168,22 @@ Question 5: isEven  \n`);
  * 
  * ↓ YOUR CODE HERE ↓ */
 
-
-
+function isEven(x) {
+       if (x % 2 === 0) {
+              return true;
+       } else {
+              return false;
+       }
+}
 
 
 /* ↑ YOUR CODE HERE ↑ */
 
 //! Sample test cases for the above isEven function (uncomment to test)
-//console.log(isEven(2));   //should return true
-//console.log(isEven(3));   //should return false
-//console.log(isEven(4));   //should return true
-//console.log(isEven(5));   //should return false
+console.log(isEven(2));   //should return true
+console.log(isEven(3));   //should return false
+console.log(isEven(4));   //should return true
+console.log(isEven(5));   //should return false
 
 
 
@@ -180,16 +202,22 @@ Question 6: addingMachine \n`);
  * 
  * ↓ YOUR CODE HERE ↓ */
 
-
+function addingMachine(x) {
+       let sum = 0;
+       for (let i=0; i < x.length; i++) {
+              sum = sum + x.at(i);
+       }
+       return sum;
+}
 
 
 
 /* ↑ YOUR CODE HERE ↑ */
 
 //! Sample test cases for the above isEven function (uncomment to test)
-//console.log(addingMachine([1, 2, 3, 4, 5]));                    //should return 15
-//console.log(addingMachine([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));    //should return 55
-//console.log(addingMachine([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])); //should return 120
+console.log(addingMachine([1, 2, 3, 4, 5]));                    //should return 15
+console.log(addingMachine([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));    //should return 55
+console.log(addingMachine([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15])); //should return 120
 
 
 
@@ -212,18 +240,42 @@ Question 7: reverse \n`);
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
-
-
-
+function reverse(x) {
+       switch(typeof x) {
+              case "boolean":
+                     return !x;
+                     break;
+              case "number":
+                     let numArray = x.toString();
+                     const makeArray = numArray.split("");
+                     const revNumArray = makeArray.reverse();
+                     return revNumArray.join("");
+                     break; 
+              case "string":
+                     let makeString = x.split("");
+                     let reverseString = makeString.reverse();
+                     return reverseString.join("");
+                     break;
+              case"object":
+                     if (Array.isArray(x)) {
+                            return x.reverse();
+                     } else {
+                            return false;
+                     }
+                     break;
+              default:
+                     return false;
+       }
+}
 
 
 /* ↑ YOUR CODE HERE ↑ */
 
 // Sample test cases for the above reverse function (uncomment to test)
-//console.log(reverse(1234));         //should return 4321
-//console.log(reverse('hello'));      //should return 'olleh'
-//console.log(reverse(true));         //should return false
-//console.log(reverse([1, 2, 3, 4])); //should return [4, 3, 2, 1]
+console.log(reverse(1234));         //should return 4321
+console.log(reverse('hello'));      //should return 'olleh'
+console.log(reverse(true));         //should return false
+console.log(reverse([1, 2, 3, 4])); //should return [4, 3, 2, 1]
 
 
 
