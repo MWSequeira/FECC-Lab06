@@ -240,6 +240,7 @@ Question 7: reverse \n`);
  * 
  * 
  * ↓ YOUR CODE HERE ↓ */
+
 function reverse(x) {
        switch(typeof x) {
               case "boolean":
@@ -279,7 +280,6 @@ console.log(reverse([1, 2, 3, 4])); //should return [4, 3, 2, 1]
 
 
 
-
 // Question 8: removeElements 
 console.log(`--------------------------
 Question 8: removeElements \n`);
@@ -298,14 +298,20 @@ Question 8: removeElements \n`);
  * 
  * ↓ YOUR CODE HERE ↓ */
 
-
+function removeElements (array) {
+       while (array.lenghth > 0) {
+              console.log(array.pop());
+       }
+       
+       return ("The array is empty"); //my system goes into an infinite loop when it tries to return an empty array.
+}
 
 
 
 /* ↑ YOUR CODE HERE ↑ */
 
 // Sample test cases for the above removeElements function (uncomment to test)
-//console.log(removeElements([1, 2, 3, 4, 5])); //should return [] (an empty array)
+console.log(removeElements([1, 2, 3, 4, 5])); //should return [] (an empty array)
 
 
 
@@ -325,13 +331,21 @@ Question 9: whichArrayIsLonger  \n`);
  * 
  * ↓ YOUR CODE HERE ↓ */
 
-
+function whichArrayIsLonger (array1, array2) {
+       if(array1.length > array2.length) {
+              return array1;
+       } else if (array1.length < array2.length) {
+              return array2;
+       } else {
+              return false;
+       }
+}
 
 
 
 /* ↑ YOUR CODE HERE ↑ */
 
 // Sample test cases for the above whichArrayIsLonger function (uncomment to test)
-//console.log(whichArrayIsLonger([1, 2, 3, 4, 5], [1, 2, 3, 4]));    //should return [1, 2, 3, 4, 5]
-//console.log(whichArrayIsLonger([1, 2, 3, 4], [1, 2, 3, 4, 5, 6])); ///should return [1, 2, 3, 4, 5, 6]
-//console.log(whichArrayIsLonger([1, 2, 3, 4], [1, 2, 3, 4]));       //should return false (because they are the same length)
+console.log(whichArrayIsLonger([1, 2, 3, 4, 5], [1, 2, 3, 4]));    //should return [1, 2, 3, 4, 5]
+console.log(whichArrayIsLonger([1, 2, 3, 4], [1, 2, 3, 4, 5, 6])); ///should return [1, 2, 3, 4, 5, 6]
+console.log(whichArrayIsLonger([1, 2, 3, 4], [1, 2, 3, 4]));       //should return false (because they are the same length)
