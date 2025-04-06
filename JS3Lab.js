@@ -247,17 +247,21 @@ function reverse(x) {
                      return !x;
                      break;
               case "number":
+                     /*
                      let numArray = x.toString();
                      const makeArray = numArray.split("");
                      const revNumArray = makeArray.reverse();
                      return revNumArray.join("");
+                     */
+                    //from the lab: put all the methods in one line.
+                    return x.toString().split("").reverse().join("");
                      break; 
               case "string":
                      let makeString = x.split("");
                      let reverseString = makeString.reverse();
                      return reverseString.join("");
                      break;
-              case"object":
+              case "object":
                      if (Array.isArray(x)) {
                             return x.reverse();
                      } else {
@@ -299,14 +303,12 @@ Question 8: removeElements \n`);
  * ↓ YOUR CODE HERE ↓ */
 
 function removeElements (array) {
-       while (array.lenghth > 0) {
-              console.log(array.pop());
+       while (array.length > 0) {
+              array.pop();
        }
        
-       return ("The array is empty"); //my system goes into an infinite loop when it tries to return an empty array.
+       return(array); //my system goes into an infinite loop when it tries to return an empty array.
 }
-
-
 
 /* ↑ YOUR CODE HERE ↑ */
 
